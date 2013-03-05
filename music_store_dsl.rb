@@ -2,19 +2,19 @@
 
 class Album
   attr_writer :record_label, :name, :year
-  attr_reader :songs, :artist
+  attr_reader :tracks, :artist
 
   def initialize(artist, &block)
     @artist = artist
-    @songs = []
+    @tracks = []
     instance_eval(&block) if block_given?
   end
 
-  def song(name, &block)
-    if (song = Song.new(name)) && block_given?
-      song.instance_eval(&block)
+  def track(name, &block)
+    if (track = Track.new(name)) && block_given?
+      track.instance_eval(&block)
     end
-    @songs << song 
+    @tracks << track 
   end
 
   def record_label(record_label_name = nil)
@@ -38,7 +38,7 @@ class Album
   end
 end
 
-class Song
+class Track 
   attr_accessor :name, :instruments
   attr_writer :featuring, :explicit_lyrics, :duration
 
@@ -79,16 +79,16 @@ class AlbumPrinter
     output << "Record Label: #{@album.record_label} \n"
     output << "Album: #{@album.name} \n"
     output << "Year: #{@album.year} \n"
-    output << "Tracks: #{@album.songs.length} \n"
+    output << "Tracks: #{@album.tracks.length} \n"
     
-    @album.songs.each_with_index do |song,i|
-      output << " #{i + 1}. #{ song.name }"
-      output << " (#{ song.duration })" unless song.duration.nil?
-      output << "\n     featuring: #{ song.featuring }" unless song.featuring.nil? 
-      output << "\n     * explicit lyrics" if song.explicit_lyrics == true
-      if !song.instruments.empty?
+    @album.tracks.each_with_index do |track,i|
+      output << " #{i + 1}. #{ track.name }"
+      output << " (#{ track.duration })" unless track.duration.nil?
+      output << "\n     featuring: #{ track.featuring }" unless track.featuring.nil? 
+      output << "\n     * explicit lyrics" if track.explicit_lyrics == true
+      if !track.instruments.empty?
         output << "\n"
-        output << "     instruments: " << song.instruments.join(", ")
+        output << "     instruments: " << track.instruments.join(", ")
       end
       output << "\n"
     end
@@ -101,7 +101,7 @@ modest_mouse = Album.new("Modest Mouse") do
   year "2004"
   record_label "SONY Music Entertainment Downloads LLC."
 
-  song "Horn Intro" do	
+  track "Horn Intro" do	
     duration "0:11"
     featuring "Travis Douce"
     instrument "guitar"
@@ -109,74 +109,74 @@ modest_mouse = Album.new("Modest Mouse") do
     instrument "trumpet"
   end
 
-  song "The World At Large" do	 
+  track "The World At Large" do	 
     duration "4:32"
     featuring "Dr. Dre"
     instrument "guitar"
     instrument "drums"
   end
 
-  song "Float On" do	 
+  track "Float On" do	 
     duration "3:28"
   end
 
-  song "Ocean Breathes Salty" do
+  track "Ocean Breathes Salty" do
     duration "3:44"
     instrument "guitar"
     instrument "drums"
     instrument "banjo"
   end
 
-  song "Dig Your Grave" do	
+  track "Dig Your Grave" do	
     duration "0:17"
     instrument "tuba"
   end
 
-  song "Bury Me With It" do	 
+  track "Bury Me With It" do	 
     duration "3:49"
   end
 
-  song "Dance Hall" do 
+  track "Dance Hall" do 
     explicit_lyrics true
     duration "2:57"
   end
 
-  song "Bukowski" do
+  track "Bukowski" do
     explicit_lyrics true 
     duration "4:14"
   end
 
-  song "This Devil's Workday" do
+  track "This Devil's Workday" do
     duration "2:19"
   end
 
-  song "The View" do 
+  track "The View" do 
     explicit_lyrics true 
     duration "4:10"
   end
 
-  song "Satin In A Coffin" do	 
+  track "Satin In A Coffin" do	 
     duration "2:38"
   end
 
-  song "Interlude (Milo)" do
+  track "Interlude (Milo)" do
     duration "0:58"
   end
 
-  song "Blame It On The Tetons" do
+  track "Blame It On The Tetons" do
     duration "5:25"
   end 
 
-  song "Black Cadillacs" do 
+  track "Black Cadillacs" do 
     explicit_lyrics true
     duration "2:43"
   end
 
-  song "One Chance" do	 
+  track "One Chance" do	 
     duration "3:01"
   end
 
-  song "The Good Times Are Killing Me" do
+  track "The Good Times Are Killing Me" do
     explicit_lyrics true
     duration "4:19"
   end
@@ -187,30 +187,30 @@ bob_dylan = Album.new("Bob Dylan") do
   record_label "Universal Music Group"
   year 1975 
 
-  song "Hurricane" do 
+  track "Hurricane" do 
     duration '11:32'
     instrument "guitar"
     instrument "tambourine"
   end
 
-  song "Isis" do  
+  track "Isis" do  
     duration "6:58"
   end
 
-  song "Mozambique" do 
+  track "Mozambique" do 
     duration "3:00"
     instrument "guitar"
     instrument "fiddle"
     instrument "harmonica"
   end
 
-  song "One More Cup Of Coffee"
-  song "Oh, Sister"
-  song "Joey" 
-  song "Romance In Durango"
-  song "Black Diamond Bay" 
+  track "One More Cup Of Coffee"
+  track "Oh, Sister"
+  track "Joey" 
+  track "Romance In Durango"
+  track "Black Diamond Bay" 
 
-  song "Sara" do 
+  track "Sara" do 
     duration "5:31"
     instrument "banjo"
   end

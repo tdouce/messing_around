@@ -101,7 +101,7 @@ modest_mouse = Album.new("Modest Mouse") do
   year "2004"
   record_label "SONY Music Entertainment Downloads LLC."
 
-	song "Horn Intro" do	
+  song "Horn Intro" do	
     duration "0:11"
     featuring "Travis Douce"
     instrument "guitar"
@@ -109,60 +109,74 @@ modest_mouse = Album.new("Modest Mouse") do
     instrument "trumpet"
   end
 
-	song "The World At Large" do	 
+  song "The World At Large" do	 
     duration "4:32"
     featuring "Dr. Dre"
     instrument "guitar"
     instrument "drums"
   end
-	song "Float On" do	 
+
+  song "Float On" do	 
     duration "3:28"
   end
-	song "Ocean Breathes Salty" do
+
+  song "Ocean Breathes Salty" do
     duration "3:44"
     instrument "guitar"
     instrument "drums"
     instrument "banjo"
   end
-	song "Dig Your Grave" do	
+
+  song "Dig Your Grave" do	
     duration "0:17"
     instrument "tuba"
   end
-	song "Bury Me With It" do	 
+
+  song "Bury Me With It" do	 
     duration "3:49"
   end
-	song "Dance Hall" do 
+
+  song "Dance Hall" do 
     explicit_lyrics true
     duration "2:57"
   end
-	song "Bukowski" do
+
+  song "Bukowski" do
     explicit_lyrics true 
     duration "4:14"
   end
-	song "This Devil's Workday"	do
+
+  song "This Devil's Workday"	do
     duration "2:19"
   end
-	song "The View" do 
+
+  song "The View" do 
     explicit_lyrics true 
     duration "4:10"
   end
-	song "Satin In A Coffin" do	 
+
+  song "Satin In A Coffin" do	 
     duration "2:38"
   end
-	song "Interlude (Milo)" do
+
+  song "Interlude (Milo)" do
     duration "0:58"
   end
-	song "Blame It On The Tetons" do
+
+  song "Blame It On The Tetons" do
     duration "5:25"
   end 
-	song "Black Cadillacs" do 
+
+  song "Black Cadillacs" do 
     explicit_lyrics true
     duration "2:43"
   end
-	song "One Chance" do	 
+
+  song "One Chance" do	 
     duration "3:01"
   end
-	song "The Good Times Are Killing Me" do
+
+  song "The Good Times Are Killing Me" do
     explicit_lyrics true
     duration "4:19"
   end
@@ -176,26 +190,31 @@ bob_dylan = Album.new("Bob Dylan") do
   name "Desire"
   record_label "Universal Music Group"
   year 1975 
-	song "Hurricane" do 
+
+  song "Hurricane" do 
     duration '11:32'
     instrument "guitar"
     instrument "tambourine"
   end
-	song "Isis" do  
+
+  song "Isis" do  
     duration "6:58"
   end
-	song "Mozambique" do 
+
+  song "Mozambique" do 
     duration "3:00"
     instrument "guitar"
     instrument "fiddle"
     instrument "harmonica"
   end
+
   song "One More Cup Of Coffee"
-	song "Oh, Sister"
-	song "Joey" 
-	song "Romance In Durango"
-	song "Black Diamond Bay" 
-	song "Sara" do 
+  song "Oh, Sister"
+  song "Joey" 
+  song "Romance In Durango"
+  song "Black Diamond Bay" 
+
+  song "Sara" do 
     duration "5:31"
     instrument "banjo"
   end

@@ -146,7 +146,7 @@ modest_mouse = Album.new("Modest Mouse") do
     duration "4:14"
   end
 
-  song "This Devil's Workday"	do
+  song "This Devil's Workday" do
     duration "2:19"
   end
 
@@ -181,9 +181,6 @@ modest_mouse = Album.new("Modest Mouse") do
     duration "4:19"
   end
 end
-
-modest_mouse.to_s
-
 
 
 bob_dylan = Album.new("Bob Dylan") do 
@@ -220,8 +217,9 @@ bob_dylan = Album.new("Bob Dylan") do
   end
 end
 
-bob_dylan.to_s
 
+bob_dylan.to_s
+modest_mouse.to_s
 
 
 

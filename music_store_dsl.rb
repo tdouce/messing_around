@@ -182,7 +182,6 @@ modest_mouse = Album.new("Modest Mouse") do
   end
 end
 
-
 bob_dylan = Album.new("Bob Dylan") do 
   name "Desire"
   record_label "Universal Music Group"
